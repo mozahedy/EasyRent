@@ -2,13 +2,26 @@ package com.easyRent.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-@Entity(name="Cordinate")
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Person {
-	@Column
+    @Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+    
+    @Column
 	private String firstName;
+    
+    @Column
 	private String lastName;
+    
+    @Column
 	private String phone;
 	
 }

@@ -2,28 +2,64 @@ package com.easyRent.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Property {
 	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	@Column
 	private String title;
+	
+	@Column
 	private String description;
+	
+	@Column
 	private float price;
+	
+	@Column
 	private float area;
+	
+	@Column
 	private LocalDate expireDate;
+	
+	@Column
 	private int bathCount;
 	
+	@Column
 	private int bedCount;
+	
+	@Column
 	private int garageCount;
+	
+	@Column
 	private boolean airConditioning;
+	
+	@Column
 	private boolean grill;
+	
+	@Column
 	private boolean oven;
+	
+	@Column
 	private boolean parking;
+	
+	@Column
 	private PropertyType propertyType;
+	
+	@OneToMany(mappedBy = "property")
+	private PropertyPicture picture;
+	
+	@OneToMany(mappedBy = "property")
+	private PropertyReview review;
+	
 	public long getId() {
 		return id;
 	}

@@ -1,9 +1,18 @@
 package com.easyRent.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class User extends Person{
-	private long id;
+	
+	@Column
 	private String userName;
+	
+	@Column
 	private String password;
+	
+	@Column
 	private String email;
 	
 
