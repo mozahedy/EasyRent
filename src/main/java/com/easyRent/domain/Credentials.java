@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
  
-@Entity(name = "USERS")
+@Entity(name = "Credentials")
 public class Credentials {
 
 	 @Id
